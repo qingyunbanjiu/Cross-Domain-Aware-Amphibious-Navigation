@@ -57,8 +57,31 @@ This repository includes both **simulation** and **real-world deployment** compo
 
 ---
 
-## Repository Structure
-README.md
-Simulation.zip
-Real-World.zip
-simulation point cloud.zip
+## Repository Structure and Description
+- **Simulation.zip**, Simulation code and path-planning experiments in representative littoral environments.
+- **Real-World.zip**, Real-world deployment code for LiDAR-based mapping and online navigation on a physical robot.
+- **Simulation point cloud.zip**, Sample point cloud data for testing the mapping and planning pipeline.
+
+---
+## Simulation
+1. Unzip Simulation.zip
+2. Install the required Python dependencies
+3. Prepare the sample point cloud data if needed
+4. Run the planner:
+   - python d_star_lite_path_planning.py
+---
+
+## Real-World Deployment
+1. **Configure the LiDAR topic**, Modify the point cloud subscription topic in:
+   - sgp_mapping_node.py
+2. **Launch the SGP mapping module**, Before starting navigation, launch the mapping process:
+   - roslaunch sgp_mapping_ros mapping.launch
+
+  This starts the online terrain mapping module based on incoming LiDAR data. The generated map can be visualized in **RViz**.
+
+3. **Run the navigation planner**, After the mapping module is running, start the planner:
+   - rosrun dstar_navigation dstar_planner.py
+
+  This enables online path planning using the traversability map and uncertainty-aware planning strategy.
+
+---
