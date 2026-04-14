@@ -67,10 +67,10 @@ This repository includes both **simulation** and **real-world deployment** compo
 1. **Configure the LiDAR topic**, Modify the point cloud subscription topic in:
    - sgp_mapping_node.py
 2. **Launch the SGP mapping module**, Before starting navigation, launch the mapping process:
-   - roslaunch sgp_mapping_ros mapping.launch:
+   - roslaunch sgp_mapping_ros mapping.launch
      - This starts the online terrain mapping module based on incoming LiDAR data. The generated map can be visualized in **RViz**.
 3. **Run the navigation planner**, After the mapping module is running, start the planner:
-   - rosrun dstar_navigation dstar_planner.py:
+   - rosrun dstar_navigation dstar_planner.py
      - This enables online path planning using the traversability map and uncertainty-aware planning strategy.
   
 ---
