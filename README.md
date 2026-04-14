@@ -2,14 +2,6 @@
 
 A hierarchical cross-domain aware navigation framework for amphibious robots in unstructured littoral environments.
 
-This repository contains the implementation of our amphibious navigation framework that combines:
-
-- **Sparse Gaussian Process (SGP)-based terrain mapping**
-- **Uncertainty-aware local path planning**
-- **Explicit cross-domain transition management** for answering:
-  - **whether to cross**
-  - **where to cross**
-
 The framework is designed for local-online navigation at representative littoral land-water interfaces, where robots must operate under heterogeneous terrain conditions, degraded boundary perception, and uncertain transition risks.
 
 ---
